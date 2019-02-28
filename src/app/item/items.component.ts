@@ -39,7 +39,11 @@ export class ItemsComponent implements OnInit {
     constructor(private itemService: ItemService) { }
 
     ngOnInit(): void {
+      // This causes the error after I relaunch the app...
         this.unsubscribeAll();
+
+
+
         this.items = this.itemService.getItems();
         const intent = new android.content.Intent(appAndroid.context, com.tns.NativeScriptActivity.class);
         const resources = appAndroid.context.getResources();
